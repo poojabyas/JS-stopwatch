@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center; 
+            margin-top: 9%;
+        }
+        h1{
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            width: 15%;
+            text-align: center;
+            margin-left: 42%;
+        }
+        button{
+            width: 8%;
+        }
+    </style>
+</head>
+<body>
+    <h1 >0:00</h1>
+    <button onclick="start()">Start</button>
+    <button onclick="stop()">Stop</button>
+    <button onclick="Reset()">Reset</button>
+</body>
+</html>
+
+
+<script>
+    let i = 0
+    let timer
+
+    function start(){
+        timer = setInterval(() => {
+        i++
+        document.querySelector("h1").innerText = i
+        console.log(i)
+    }, 1000);
+    }
+    function stop() {
+    clearInterval(timer); 
+}
+
+    function Reset(){
+        i = 0;
+        document.querySelector("h1").innerText = i
+        start()
+    }
+
+
+</script>
